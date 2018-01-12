@@ -1,0 +1,18 @@
+
+{%  extends 'base.html' %}
+{% load static %}
+{% block title %}Книги{%  endblock %}
+{% block body %}
+    <div>
+        {% for order in orders %}
+            <div class="alert alert-success" role="alert">
+                <!--<img src="static/image/book.jpg">-->
+                <a href="#">
+                    {{ order.name }} {{ order.author }} {{ order.year }}
+                </a>
+            </div>
+        {% empty %}
+            <li>пустой список</li>
+        {% endfor %}
+    </div>
+{% endblock %}
